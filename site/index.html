@@ -30,12 +30,32 @@
       font-family: Arial, Helvetica, sans-serif;
       color: skyblue;
     }
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
 
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  border: 2px solid white
+}
+.slidecontainer{
+width: 100%
+}
+.slider{
+  height: 25px;
+  background:#d3d3d3 ;
+  outline:none;
+  opacity:0.7;
+  -webkit-transition: .2s;
+}
     footer{
       font-size: 12px;
     }
   </style>
-  <title>Hello Coursera!</title>
+  <title>Andrew's Hompage</title>
 </head>
 <body>
   <h1>Andrew's Cool Website!</h1>
@@ -46,10 +66,28 @@
   <li>Started CSS implementation! This site is realy staring to come together! </li>
   <li>More to come!!!</li>
 </ul>
-<h3>Button <span>Powa<span></h3>
-<h4 onclick = "var statement = prompt('Enter a phrase and I wll say it back'); alert('Bro, you really think imma gonna do that?'); alert('You\'re a crazy bumpkin!!')">[You Know the drill!]</h4>
-
-  
+<h3>Button <span>Pow'a<span></h3>
+  <button class = "button button1" onclick="var statement = prompt('Enter a phrase and I wll say it back'); alert('Bro, you really think imma gonna do that?'); alert('You\'re a crazy bumpkin!!')">You know the drill</button>
+  <h3>Slider</h3>
+  <div class = "Slider">
+    <input type = "range" min = "1" max = "100" value = "50" class = "slider" id="myRange">
+  </div>
+  <p>Value: <span id="demo"></span></p>
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo")
+    output.innerHTML= slider.value//display default slider value
+    //update current slider value
+    slider.oninput=function(){
+      output.innerHTML= this.value;
+      if (this.value == 100){
+        output.innerHTML="Max"
+      }
+      if(this.value == 1){
+        output.innerHTML="Min"
+      }
+    }
+  </script>
 <footer>Site version 2.0 &copy; 2023 Reybros Inc.</footer>
 </body>
 </html>
